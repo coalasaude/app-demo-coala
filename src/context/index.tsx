@@ -3,7 +3,6 @@ import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import React from 'react'
 
-import { UserDataProvider } from '@/components/UserDataProvider'
 import { AuthProvider } from '@/context/AuthProvider'
 import { LayoutProvider } from '@/context/LayoutProvider'
 import { MetaPixelProvider } from '@/context/MetaPixelProvider'
@@ -19,9 +18,7 @@ function Providers({ children }: { children: React.ReactNode; isMobile: boolean 
           <RequestProvider>
             <LayoutProvider>
               <ParamsProvider>
-                <UserDataProvider>
                   <MetaPixelProvider>{children}</MetaPixelProvider>
-                </UserDataProvider>
               </ParamsProvider>
             </LayoutProvider>
           </RequestProvider>
