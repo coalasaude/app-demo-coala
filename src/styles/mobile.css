@@ -1,0 +1,41 @@
+.mobile {
+  --gray_100: #e1e5e9;
+  --gray_200: #d2d8e0;
+  --gray_300: #c4cbd4;
+  --gray_400: #a6b0bf;
+  --gray_500: #8996a9;
+  --gray_600: #64748b;
+  --gray_700: #2b323b;
+  --bgcolor_100: #f3f5f7;
+  --bgcolor_200: #f9fafb;
+  --primary_500: #553597;
+  --primary_400: #6f46be;
+  --primary_300: #8968ca;
+  --primary_200: #8968ca;
+  --mui-palette-primary-light: #ede3ff;
+  --secondary_400: #ce497f;
+  --secondary_300: #f4679d;
+  --secondary_200: #f8a0c2;
+  --secondary_100: #fde7f0;
+  --blue_gradient: linear-gradient(282.97deg, #4477fe 29.09%, #e1e9ff 216.35%);
+  --pink_gradient: linear-gradient(282.97deg, #f4679d 29.09%, #ffd7e6 216.35%);
+  --purple_gradient: linear-gradient(282.97deg, #6f46be 29.09%, #ede3ff 216.35%);
+  --success: #03be7f;
+  --information: #4477fe;
+  --emergency: #ff6332;
+  --warning: #fec601;
+  --error: #bf0000;
+}
+
+#container.white-bg {
+  background: white;
+}
+
+.mobile .intercom-lightweight-app-launcher,
+.mobile .intercom-namespace .intercom-dfosxs {
+  bottom: 85px;
+}
+
+.mobile .intercom-lightweight-app-launcher.with-actions {
+  transform: translateY(-100%);
+}

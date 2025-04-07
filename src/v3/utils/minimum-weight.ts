@@ -1,0 +1,101 @@
+const minimumGirlWeightsInMonths: Record<string, string> = {
+  '0': '2,4kg',
+  '0.1': '3,2kg',
+  '0.2': '3,9kg',
+  '0.3': '4,5kg',
+  '0.4': '5,0kg',
+  '0.5': '5,4kg',
+  '0.6': '5,7kg',
+  '0.7': '6,0kg',
+  '0.8': '6,3kg',
+  '0.9': '6,5kg',
+  '0.10': '6,7kg',
+  '0.11': '6,9kg',
+  '0.12': '7,0kg',
+  '0.13': '7,2kg',
+  '0.14': '7,4kg',
+  '0.15': '7,6kg',
+  '0.16': '7,7kg',
+  '0.17': '7,9kg',
+  '0.18': '8,1kg',
+  '0.19': '8,2kg',
+  '0.20': '8,4kg',
+  '0.21': '8,6kg',
+  '0.22': '8,7kg',
+  '0.23': '8,9kg',
+  '0.24': '9,0kg',
+  '3': '11,61kg',
+  '4': '13,25kg',
+  '5': '14,56kg',
+  '6': '16,87kg',
+  '7': '18,73kg',
+  '8': '20,55kg',
+  '9': '22,27kg',
+  '10': '24,13kg',
+  '11': '26,26kg',
+  '12': '28,85kg',
+  '13': '32,75kg',
+  '14': '37,69kg',
+  '15': '40,37kg',
+  '16': '41,64kg',
+  '17': '42,59kg',
+  '18': '42,87kg',
+}
+
+export const getMinimumEstimatedWeightGirl = (patientAge: number | null): string => {
+  if (patientAge === null) return '-'
+
+  const ageStr = String(patientAge)
+  return minimumGirlWeightsInMonths[ageStr] ?? '-'
+}
+
+const minimumBoyWeightsInMonths: Record<string, string> = {
+  '0': '2,5kg',
+  '0.1': '3,4kg',
+  '0.2': '4,3kg',
+  '0.3': '5,0kg',
+  '0.4': '5,5kg',
+  '0.5': '6,0kg',
+  '0.6': '6,4kg',
+  '0.7': '6,7kg',
+  '0.8': '6,9kg',
+  '0.9': '7,1kg',
+  '0.10': '7,4kg',
+  '0.11': '7,6kg',
+  '0.12': '7,7kg',
+  '0.13': '7,9kg',
+  '0.14': '8,1kg',
+  '0.15': '8,3kg',
+  '0.16': '8,4kg',
+  '0.17': '8,6kg',
+  '0.18': '8,8kg',
+  '0.19': '8,9kg',
+  '0.20': '9,1kg',
+  '0.21': '9,2kg',
+  '0.22': '9,4kg',
+  '0.23': '9,5kg',
+  '0.24': '9,7kg',
+  '3': '12,25kg',
+  '4': '13,65kg',
+  '5': '15,24kg',
+  '6': '17,46kg',
+  '7': '19,50kg',
+  '8': '21,77kg',
+  '9': '23,81kg',
+  '10': '25,76kg',
+  '11': '28,03kg',
+  '12': '30,48kg',
+  '13': '32,66kg',
+  '14': '36,20kg',
+  '15': '41,41kg',
+  '16': '46,90kg',
+  '17': '50,12kg',
+  '18': '51,26kg',
+}
+
+export const getMinimumEstimatedWeightBoy = (patientAge: number | null): string => {
+  if (patientAge === null) return '-'
+
+  const ageStr = String(patientAge)
+  return minimumBoyWeightsInMonths[ageStr] ?? '-'
+}

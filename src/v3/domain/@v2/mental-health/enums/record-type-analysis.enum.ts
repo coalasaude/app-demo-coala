@@ -1,0 +1,4 @@
+export enum RecordTypeAnalysisEnum {
+  REQUESTED_ANALYSIS = 'REQUESTED_ANALYSIS',
+  MEDICAL_REPORT = 'MEDICAL_REPORT',
+}

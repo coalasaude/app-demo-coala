@@ -1,0 +1,13 @@
+<svg width="64" height="65" viewBox="0 0 64 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M62 2.5H2V62.5H62V2.5Z" fill="white"/>
+<path d="M61.9999 12.675H2.78491" stroke="#B0BEC5" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M61.9999 22.335H2.73486" stroke="#B0BEC5" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M61.9999 31.995H2.67993" stroke="#B0BEC5" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M61.9999 41.655H2.62988" stroke="#B0BEC5" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M62 51.32H2.57495" stroke="#B0BEC5" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M19.3601 61.455H10.9451V28.19C10.9451 27.51 11.4951 26.96 12.1751 26.96H18.1301C18.8101 26.96 19.3601 27.51 19.3601 28.19V61.455Z" fill="#9CCC65"/>
+<path d="M36.21 61.455H27.79V37.92C27.79 37.24 28.34 36.69 29.02 36.69H34.975C35.655 36.69 36.205 37.24 36.205 37.92V61.455H36.21Z" fill="#F44336"/>
+<path d="M51.82 61.455H45.865C45.185 61.455 44.635 60.905 44.635 60.225V13.43C44.635 12.75 45.185 12.2 45.865 12.2H51.82C52.5 12.2 53.05 12.75 53.05 13.43V60.225C53.05 60.905 52.5 61.455 51.82 61.455Z" fill="#0091EA"/>
+<path d="M62 60.5H4V2.5H2V62.5H62V60.5Z" fill="#B0BEC5"/>
+<path d="M61 3.5V61.5H3V3.5H61ZM62 2.5H2V62.5H62V2.5Z" fill="#B0BEC5"/>
+</svg>

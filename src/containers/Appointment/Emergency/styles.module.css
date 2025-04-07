@@ -1,0 +1,28 @@
+/*
+.animation {
+  box-shadow: 0px 0px 10px -3px rgb(163, 143, 226) inset;
+  background: white;
+  animation: newappointment 1s infinite;
+}
+.animation td:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.animation td {
+  mix-blend-mode: multiply;
+  border-radius: 5px 0 0 5px;
+}
+.animation td:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+@keyframes newappointment {
+  0% {
+    box-shadow: 0px 0px 10px -3px rgb(163, 143, 226, 0) inset;
+    background: white;
+  }
+
+  100% {
+    box-shadow: 0px 0px 10px -3px rgb(163, 143, 226) inset;
+  }
+}
+*/

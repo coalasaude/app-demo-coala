@@ -1,0 +1,21 @@
+{
+  "name": "FrontEnd Coala Saude",
+  "description": "Front-end da aplicação principal, desenvolvido em next.js",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

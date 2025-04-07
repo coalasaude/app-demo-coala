@@ -1,0 +1,6 @@
+export enum DocumentTypeEnum {
+  DISEASE = 'DISEASE',
+  MEDICINE = 'MEDICINE',
+  PRESCRIPTION = 'PRESCRIPTION',
+  VACCINE = 'VACCINE',
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.coala.appcoala",
+      "sha256_cert_fingerprints": [
+        "5F:83:DE:6A:44:23:D0:71:61:EF:9E:66:BA:AD:3A:F8:4C:57:3C:C8:8A:5F:40:7B:62:33:96:36:B7:06:29:E6"
+      ]
+    }
+  }
+]

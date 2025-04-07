@@ -1,0 +1,9 @@
+export enum Complaint {
+  TRAUM = 'TRAUM',
+  PAIN = 'PAIN',
+  FLU_SYMPTOMS = 'FLU_SYMPTOMS',
+  FEVER = 'FEVER',
+  OTHERS = 'OTHERS',
+  SKIN_LESION = 'SKIN_LESION',
+  ALLERGY = 'ALLERGY',
+}
