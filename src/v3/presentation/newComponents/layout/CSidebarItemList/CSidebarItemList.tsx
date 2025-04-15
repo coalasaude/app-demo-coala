@@ -40,7 +40,7 @@ export const CSidebarItemList = forwardRef<HTMLDivElement, CSidebarItemListProps
     return (
       <Box ref={ref}>
         {isOpen && title && (
-          <Typography variant='h6' ml={1} mb={1} color='var(--mui-palette-grey-500)'>
+          <Typography fontSize={'24px'} fontWeight={700} ml={1} mb={1} color='var(--mui-palette-grey-500)'>
             {title}
           </Typography>
         )}

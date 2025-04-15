@@ -11,7 +11,7 @@ import { styled } from '@mui/material/styles'
 export const OpenedSideBarWidth = '255px'
 export const CollapsedSideBarWidth = '65px'
 
-export const SideBar = styled(List)<{ open: boolean }>`
+export const SideBar = styled(List) <{ open: boolean }>`
   overflow: hidden;
   padding: ${({ theme }) => theme.spacing(1)};
   padding-top: 0;
@@ -26,7 +26,7 @@ export const SideBar = styled(List)<{ open: boolean }>`
   }
 `
 
-export const SidebarContent = styled('div')<{ isOpen?: boolean }>`
+export const SidebarContent = styled('div') <{ isOpen?: boolean }>`
   width: ${CollapsedSideBarWidth};
   transition: width 0.2s cubic-bezier(0.36, 0.41, 0.26, 0.82);
   height: 100%;
@@ -51,10 +51,10 @@ export const SideBarLogo = styled('div')`
   }
 `
 
-export const AnimatedListItemText = styled(ListItemText)<ListItemTextProps & { isOpen: boolean }>`
+export const AnimatedListItemText = styled(ListItemText) <ListItemTextProps & { isOpen: boolean }>`
   transition: opacity 0.2s ease;
   opacity: 0;
-
+  
   position: relative;
   white-space: nowrap;
   ${({ isOpen }) =>
@@ -64,12 +64,12 @@ export const AnimatedListItemText = styled(ListItemText)<ListItemTextProps & { i
     `};
 `
 
-export const AnimatedListItemButton = styled(ListItemButton)<ListItemButtonProps>`
+export const AnimatedListItemButton = styled(ListItemButton) <ListItemButtonProps>`
   height: ${({ theme }) => theme.spacing(6)};
 
   border-radius: 8px;
 `
-export const CollapseButton = styled('div')<{ isOpen?: boolean }>`
+export const CollapseButton = styled('div') <{ isOpen?: boolean }>`
   background: white;
   border: 1px solid ${({ theme }) => theme.palette.grey[300]};
   border-radius: 4px;
@@ -101,7 +101,7 @@ export const CollapseButton = styled('div')<{ isOpen?: boolean }>`
   `}
 `
 
-export const StyledEmergencyButton = styled('div')<{ isOpen: boolean }>`
+export const StyledEmergencyButton = styled('div') <{ isOpen: boolean }>`
   align-items: center;
   background-color: ${({ theme }) => theme.palette.secondary.light};
   border-radius: 8px;
@@ -117,7 +117,7 @@ export const StyledEmergencyButton = styled('div')<{ isOpen: boolean }>`
   }
 `
 
-export const StyledListItemIcon = styled(ListItemIcon)<{
+export const StyledListItemIcon = styled(ListItemIcon) <{
   color: string
   applyColorInIcon: boolean
 }>`
@@ -127,12 +127,18 @@ export const StyledListItemIcon = styled(ListItemIcon)<{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  
   ${({ applyColorInIcon, color }) =>
     applyColorInIcon &&
     `
+     svg {
+      width: 100%;
+      height: 100%;
+     }
+
      svg path {
       fill: ${color};
     }

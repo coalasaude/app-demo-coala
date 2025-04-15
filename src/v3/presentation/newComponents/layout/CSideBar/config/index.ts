@@ -40,27 +40,6 @@ export const useSidebarConfig = (): TSidebarItem[] => {
 
   return [
     {
-      name: 'Início',
-      route: () => '/',
-      icon: HomeOutlined,
-      isActive: (route) => true,
-      hasPermission: () => {
-        return true
-      },
-    },
-    {
-      id: target.coalaSideBarAppointment,
-      name: 'Atendimentos',
-      disabled: true,
-      route: () => '/',
-      isActive: (route) => route.includes(NEW_ROUTES.AUTHENTICATED.APPOINTMENT.path),
-      icon: AddToQueue,
-      hasPermission: () => {
-
-        return true
-      },
-    },
-    {
       id: target.coalaSideBarUser,
       name: 'Usuários',
       disabled: true,
@@ -72,39 +51,11 @@ export const useSidebarConfig = (): TSidebarItem[] => {
       icon: FaceOutlinedIcon,
     },
     {
-      id: target.coalaSideBarHealthUnit,
-      name: 'Ficha de saúde',
-      disabled: true,
-      route: () => '/',
-      isActive: (route) => route.endsWith(AUTHENTICATED_ROUTES.HEALTH_HISTORIC),
-      icon: BadgeOutlined,
-      hasPermission: (auth) => {
-        return true
-      },
-    },
-    {
-      name: 'Saúde mental',
-      route: () => NEW_ROUTES.AUTHENTICATED.MENTAL_HEALTH.path,
-      isActive: (route) => route.includes(NEW_ROUTES.AUTHENTICATED.MENTAL_HEALTH.path),
-      CustomComponent: BrainIcon,
-      hasPermission: () => true,
-      icon: BrainIcon,
-    },
-    {
       name: 'Organizações',
       route: () => '/',
       isActive: (route) => route.includes(AUTHENTICATED_ROUTES.ORGANIZATION),
       icon: CorporateFare,
       disabled: true,
-      hasPermission: () => true,
-    },
-    {
-      name: 'Unidades de saúde',
-      route: () => '/',
-      isActive: (route) => route.includes(AUTHENTICATED_ROUTES.HEALTH_UNIT),
-      icon: HealthUnitIcon,
-      disabled: true,
-      CustomComponent: HealthUnitIcon,
       hasPermission: () => true,
     },
     {
@@ -132,6 +83,8 @@ export const useSidebarConfig = (): TSidebarItem[] => {
       icon: SpaOutlined,
       isActive: (route) => route.includes(AUTHENTICATED_ROUTES.OCCUPATIONAL_HEALTH),
       hasPermission: () => true,
+      disabled: true,
+
     },
   ]
 }

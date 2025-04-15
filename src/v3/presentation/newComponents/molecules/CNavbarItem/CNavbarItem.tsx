@@ -52,20 +52,23 @@ export const CNavbarItem: React.FC<CNavbarItemProps> = ({
       justifyContent='center'
       flexDirection='column'
       position='relative'
+      color={'#A6B0BF'}
     >
       <Icon
-        sx={(theme) => ({
+        sx={() => ({
+          color: '#A6B0BF',
           ...(IconProps && {}),
-          color: isActive ? theme.palette.primary.main : theme.palette.grey[600],
+          width: '43px',
+          height: '43px'
         })}
       />
       <Typography
-        variant='body2'
         textTransform='initial'
         fontWeight='normal'
         mt={0.5}
-        sx={(theme) => ({
-          color: isActive ? theme.palette.primary.main : theme.palette.grey[600],
+        sx={() => ({
+          color: '#A6B0BF',
+          fontSize: '20px !important'
         })}
       >
         {text}

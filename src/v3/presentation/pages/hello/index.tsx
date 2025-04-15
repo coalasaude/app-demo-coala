@@ -1,33 +1,53 @@
 import { useState } from 'react'
 import { Box, Typography, Dialog, DialogContent, IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import InitialStepSvg from 'public/assets/svg/AppointmentForm/InitialStep.svg'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+
+import ReportSvg from 'public/assets/svg/validacao-de-laudos.svg'
+import MentalHealthSvg from 'public/assets/svg/saude-mental-na-pratica.svg'
+import PEISvg from 'public/assets/svg/PEI-do-diagnostico-a-acao.svg'
+import TrainingSvg from 'public/assets/svg/capacitacao-que-transforma.svg'
+import CallSvg from 'public/assets/svg/abrir-chamado.svg'
+import { useBreakpoint } from '@/hooks/useBreakpoints'
 
 import { HomeHeader } from './components/HomeHeader/HomeHeader'
 
-import { useBreakpoint } from '@/hooks/useBreakpoints'
 
 const featuresData = [
   {
     id: 1,
-    title: 'Feature One Title',
-    description: 'Description for feature one. It is a long established fact that a reader will be distracted...',
+    title: ' Saúde Mental na prática',
+    description: 'Veja o depoimento real de uma escola parceira sobre como a Coala tem impactado positivamente a saúde mental no ambiente escolar, mostrando como o nosso atendimento psicológico remoto tem feito diferença no dia a dia de alunos e educadores.',
     videoUrl: '/assets/videoplayback.mp4',
-    SvgComponent: InitialStepSvg,
+    SvgComponent: MentalHealthSvg,
   },
   {
     id: 2,
-    title: 'Feature Two Title',
-    description: 'Description for feature two. Many desktop publishing packages and web page editors now use...',
+    title: 'PEI: Do diagnóstico à ação',
+    description: 'Apresentamos o preenchimento e a evolução do Plano Educacional Individualizado (PEI) dentro do nosso app, demonstrando como tornamos a personalização do cuidado simples, eficiente e acessível para toda a equipe pedagógica.',
     videoUrl: '/assets/videoplayback.mp4',
-    SvgComponent: InitialStepSvg, 
+    SvgComponent: PEISvg, 
   },
   {
     id: 3,
-    title: 'Feature Three Title',
-    description: 'Description for feature three. Various versions have evolved over the years, sometimes by accident...',
+    title: 'Abrir chamado',
+    description: 'Acompanhe uma abertura de atendimento com nosso Time de Cuidado. Em poucos cliques, a escola aciona ajuda profissional via Coala e conta com uma equipe de saúde especializada para atender seus alunos durante todo o horário escolar.',
     videoUrl: '/assets/videoplayback.mp4',
-    SvgComponent: InitialStepSvg,
+    SvgComponent: CallSvg,
+  },
+    {
+    id: 4,
+    title: 'Validação de laudos',
+    description: 'Veja como funciona o processo de validação de laudos com um especialista da nossa equipe através de uma tecnologia que garante precisão e respaldo clínico direto na escola, de forma online e rápida.',
+    videoUrl: '/assets/videoplayback.mp4',
+    SvgComponent: ReportSvg,
+  },
+    {
+    id: 5,
+    title: 'Capacitação que transforma',
+    description: 'Conheça nosso pacote completo de apoio às escolas, com capacitações, treinamentos e conteúdos sobre saúde e bem-estar. Do diagnóstico inicial ao combate ao bullying, preparamos as equipes para enfrentar todos os desafios do ambiente escolar.',
+    videoUrl: '/assets/videoplayback.mp4',
+    SvgComponent: TrainingSvg,
   },
 ]
 
@@ -57,22 +77,17 @@ export default function Home() {
         gap={2}
       >
         <HomeHeader isMobile={isMobile} />
-        <Box> 
-          <Typography variant='h2' mb={4}> 
-            Conheça nossas features
-          </Typography>
-
+        <Box>
           {featuresData.map((feature) => (
             <Box
               key={feature.id}
-              p={2}
+              p={'12px'}
               display='flex'
-              flexDirection={isMobile ? 'column' : 'row'}
+              flexDirection={'row'}
               gap={2}
-              mt={4}
-              border={'1px solid var(--mui-palette-grey-400)'}
+              mb={4}
+              border={'4px solid var(--mui-palette-grey-200)'}
               borderRadius={'20px'}
-              alignItems={'center'}
               onClick={() => handleOpenVideoDialog(feature.videoUrl)} 
               sx={{
                 cursor: 'pointer', 
@@ -82,16 +97,24 @@ export default function Home() {
                 }
               }}
             >
-              <Box flex='1' sx={{ textAlign: isMobile ? 'center' : 'left', mb: isMobile ? 2 : 0 }}> 
+              <Box flex='1' margin={'auto'} display={'flex'} justifyContent={'center'}> 
                 <feature.SvgComponent />
               </Box>
-              <Box flex='1'>
-                <Typography variant='h2' color={'var(--primary_500)'}>
-                  {feature.title} 
-                </Typography>
-                <Typography variant='h4' mt={1}>
-                  {feature.description}
-                </Typography>
+              <Box flex='1' mt={2} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
+                <Box>
+                  <Typography sx={{fontSize: '22px !important', fontWeight: '700', color: '#6F46BE'}}>
+                    {feature.title} 
+                  </Typography>
+                  <Typography mt={1} sx={{fontWeight: 400, fontSize: '16px'}}>
+                    {feature.description}
+                  </Typography>
+                </Box>
+                 <Box display={'flex'} mb={1} justifyContent={'flex-end'} paddingRight={2} alignItems={'center'} sx={{'svg': {color: '#64748B'}}}>
+                  <Typography  sx={{fontWeight: 500, fontSize: '16px', color: '#64748B'}}>
+                    Saiba Mais
+                  </Typography>
+                  <KeyboardArrowRightIcon />
+                </Box>
               </Box>
             </Box>
           ))}

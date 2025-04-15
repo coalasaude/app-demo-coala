@@ -1,8 +1,10 @@
 import { useRouter } from 'next/router'
-import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined'
-import { HelpOutline, WhatsApp, AccountCircleOutlined } from '@mui/icons-material'
 import Link from 'next/link'
+import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
+import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined'
+import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 
+import NeurologyIcon from 'public/assets/svg/HealthHistoric/Neurology.svg'
 import CSideBar from '@/v3/presentation/newComponents/layout/CSideBar'
 import { useAuth } from '@/v3/presentation/hooks/useAuth'
 import {
@@ -65,8 +67,7 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
 
   const sideBarFooterItems: TSidebarItem[] = [
     {
-      name: 'Meus dados',
-      disabled: true,
+      name: 'PEI/PDI',
       onClick: () =>
         router.push(
           bindPathParams(NEW_ROUTES.AUTHENTICATED.USERS.VIEW.bindPath, {
@@ -77,7 +78,7 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
         bindPathParams(NEW_ROUTES.AUTHENTICATED.USERS.VIEW.bindPath, {
           userId: auth.user?.id,
         }),
-      icon: AccountCircleOutlined,
+      icon: InsightsOutlinedIcon,
       isActive: (route) =>
         route.includes(
           bindPathParams(NEW_ROUTES.AUTHENTICATED.USERS.VIEW.bindPath, {
@@ -87,31 +88,28 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
       hasPermission: () => true,
     },
     {
-      name: 'Central de Ajuda',
-      disabled: true,
+      name: 'Capacit. de equipe',
       onClick: () => WebViewManager.open(process.env.SUPPORT_URL, '_blank'),
       route: () => '',
       isActive: () => false,
-      icon: HelpOutline,
+      icon: NeurologyIcon,
       hasPermission: () => true,
     },
     {
-      name: 'Fale conosco',
-      disabled: true,
+      name: 'Laudos e validação',
       onClick: () => WebViewManager.open(process.env.WHATSAPP_SUPPORT_URL, '_blank'),
       route: () => '',
       isActive: () => false,
-      icon: WhatsApp,
+      icon: ReceiptLongOutlinedIcon,
       hasPermission: () => true,
     },
     {
-      name: 'Sair',
+      name: 'Depoimentos',
       onClick: handleLostData,
       route: () => '',
       isActive: () => false,
-      icon: LogoutOutlinedIcon,
+      icon: VideocamOutlinedIcon,
       hasPermission: () => true,
-      itemColor: 'var(--mui-palette-secondary-dark)',
     },
   ]
 

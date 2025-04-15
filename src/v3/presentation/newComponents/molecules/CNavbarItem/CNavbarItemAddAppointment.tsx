@@ -14,8 +14,8 @@ export const CNavbarItemAddAppointment: React.FC<CNavbarItemAddAppointmentProps>
     id={target.coala}
     mx={1}
     style={{ borderRadius: '50%' }}
-    minHeight='50px'
-    minWidth='50px'
+    minHeight='87px'
+    minWidth='87px'
     display='flex'
     alignItems='center'
     justifyContent='center'
@@ -24,6 +24,6 @@ export const CNavbarItemAddAppointment: React.FC<CNavbarItemAddAppointmentProps>
     })}
 
   >
-    <HealthAndSafetyOutlined sx={(theme) => ({ color: theme.palette.common.white })} />
+    <HealthAndSafetyOutlined sx={(theme) => ({ color: theme.palette.common.white, height: '43px', width:'43px' })} />
   </Box>
 )

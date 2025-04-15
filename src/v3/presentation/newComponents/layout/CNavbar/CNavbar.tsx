@@ -33,7 +33,7 @@ export const CNavbar: React.FC<CNavbarProps> = ({ toggleSidebar, isOpenedSidebar
         height='100%'
         flex={1}
         mx={1}
-        minHeight='75px'
+        minHeight='130px'
       >
         <CNavbarItem
           id='home'

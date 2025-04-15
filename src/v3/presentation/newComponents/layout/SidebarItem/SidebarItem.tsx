@@ -94,6 +94,9 @@ export const SideBarItem = ({
             <AnimatedListItemText
               primary={text}
               isOpen={isOpen}
+              sx={{
+                fontSize: '22px !important'
+              }}
               primaryTypographyProps={{
                 color,
               }}

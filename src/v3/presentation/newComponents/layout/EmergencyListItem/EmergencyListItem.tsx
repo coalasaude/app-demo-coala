@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { HealthAndSafety } from '@mui/icons-material'
 
 import { AnimatedListItemText } from '../CSideBar/styles'
@@ -21,12 +21,10 @@ export const EmergencyListItem = ({ isOpen }: { isOpen: boolean }) => {
             <Box>
               <AnimatedListItemText
                 isOpen={isOpen}
-                primaryTypographyProps={{
-                  fontWeight: 600,
-                  color: 'var(--mui-palette-common-white)',
-                }}
               >
-                Chamar ajuda
+                <Typography color={'var(--mui-palette-common-white)'} fontSize={'22px !important'} fontWeight={600}>
+                  Chamar ajuda
+                </Typography>
               </AnimatedListItemText>
             </Box>
           )}

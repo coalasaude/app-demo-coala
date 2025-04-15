@@ -93,6 +93,7 @@ const CSideBar = ({
             overflow: ['hidden'],
             display: 'flex',
             flexDirection: 'column',
+            width: '60vw'
           }}
         >
           <Box p={1} mt={1} ref={sidebarTopRef}>
@@ -114,7 +115,7 @@ const CSideBar = ({
                 top: 0,
               }}
             >
-              <SideBar disablePadding open={isOpen}>
+              <SideBar disablePadding open={isOpen} sx={{marginLeft: '8px', width: '100% !important', '& > div': {display: 'flex', flexDirection: 'column', gap: '24px'}}}>
                 <CSidebarItemList
                   handleItemClick={handleItemClick}
                   sidebarItems={sidebarItems}
@@ -126,9 +127,9 @@ const CSideBar = ({
               </SideBar>
               {isSmallDevice && <CDivider sx={{ mx: 2, mb: 4 }} />}
               {isSmallDevice && sidebarFooterItems && sidebarFooterItems.length > 0 && (
-                <SideBar disablePadding open={isOpen}>
+              <SideBar disablePadding open={isOpen} sx={{marginLeft: '8px', width: '100% !important', '& > div': {display: 'flex', flexDirection: 'column', gap: '24px'}}}>
                   <CSidebarItemList
-                    title='Conta'
+                    title='Saúde Mental'
                     sidebarItems={sidebarFooterItems}
                     isOpen={isOpen}
                     isSmallDevice={isSmallDevice}
