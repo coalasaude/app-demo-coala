@@ -3,6 +3,9 @@ import Link from 'next/link'
 import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined'
 import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
+import { useState } from 'react'
+import {  Dialog, DialogContent, IconButton } from '@mui/material'
+import CloseIcon from '@mui/icons-material/Close'
 
 import NeurologyIcon from 'public/assets/svg/HealthHistoric/Neurology.svg'
 import CSideBar from '@/v3/presentation/newComponents/layout/CSideBar'
@@ -13,10 +16,8 @@ import {
 } from '@/v3/presentation/newComponents/layout/CSideBar/config'
 import CLogo from '@/v3/presentation/newComponents/atoms/CLogo'
 import { bindPathParams } from '@/utils/bindParams'
-import { NEW_ROUTES, UNAUTHENTICATED_ROUTES } from '@/constants/routes'
+import { NEW_ROUTES } from '@/constants/routes'
 import CContainer from '@/v3/presentation/newComponents/layout/CContainer'
-import { CDialogue, useModalContext } from '@/v3/presentation/components/Modal'
-import { WebViewManager } from '@/services/WebView'
 import CNavbarTop from '@/v3/presentation/newComponents/layout/CNavbarTop'
 import { useHasPermission } from '@/hooks/useHasPermission'
 import { Permissions } from '@/constants/permissions'
@@ -35,45 +36,31 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
   openSidebar,
   toggleSidebar,
 }) => {
-  const { auth, logout } = useAuth()
+  const { auth } = useAuth()
   const sidebarItems = useSidebarConfig()
   const router = useRouter()
-  const { handleModal } = useModalContext()
   const disabledPaddingRoutes = ['/app/hello', '/app/forms']
   const disablePadding = disabledPaddingRoutes.some((page) => router.pathname.startsWith(page))
-
+  const [isVideoDialogOpen, setIsVideoDialogOpen] = useState(false)
+  const [currentVideoUrl, setCurrentVideoUrl] = useState('')
   const [canAddAppointment] = useHasPermission([Permissions.ADD_APPOINTMENT])
 
-  const handleLogout = () => {
-    logout()
-    router.push(UNAUTHENTICATED_ROUTES.LOGIN)
+
+  const handleOpenVideoDialog = (videoUrl: any) => {
+    setCurrentVideoUrl(videoUrl)
+    setIsVideoDialogOpen(true)
   }
 
-  const handleLostData = () => {
-    handleModal(
-      <CDialogue
-        title='Atenção!'
-        confirmButtonLabel='Sim'
-        cancelButtonLabel='Não'
-        onConfirm={handleLogout}
-        description={
-          <span>
-            Tem certeza que deseja <b>sair</b> da sua conta?
-          </span>
-        }
-      />,
-    )
+  const handleCloseVideoDialog = () => {
+    setIsVideoDialogOpen(false)
+    setCurrentVideoUrl('') 
   }
+
 
   const sideBarFooterItems: TSidebarItem[] = [
     {
       name: 'PEI/PDI',
-      onClick: () =>
-        router.push(
-          bindPathParams(NEW_ROUTES.AUTHENTICATED.USERS.VIEW.bindPath, {
-            userId: auth.user?.id,
-          }),
-        ),
+      onClick: () => handleOpenVideoDialog('/assets/videoplayback.mp4'),
       route: () =>
         bindPathParams(NEW_ROUTES.AUTHENTICATED.USERS.VIEW.bindPath, {
           userId: auth.user?.id,
@@ -89,7 +76,7 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
     },
     {
       name: 'Capacit. de equipe',
-      onClick: () => WebViewManager.open(process.env.SUPPORT_URL, '_blank'),
+      onClick: () => handleOpenVideoDialog('/assets/videoplayback.mp4'),
       route: () => '',
       isActive: () => false,
       icon: NeurologyIcon,
@@ -97,7 +84,7 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
     },
     {
       name: 'Laudos e validação',
-      onClick: () => WebViewManager.open(process.env.WHATSAPP_SUPPORT_URL, '_blank'),
+      onClick: () => handleOpenVideoDialog('/assets/videoplayback.mp4'),
       route: () => '',
       isActive: () => false,
       icon: ReceiptLongOutlinedIcon,
@@ -105,7 +92,7 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
     },
     {
       name: 'Depoimentos',
-      onClick: handleLostData,
+      onClick: () => handleOpenVideoDialog('/assets/videoplayback.mp4'),
       route: () => '',
       isActive: () => false,
       icon: VideocamOutlinedIcon,
@@ -134,6 +121,41 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
       <CContainer id='container' disablePadding={disablePadding}>
         {children}
       </CContainer>
+      <Dialog
+              open={isVideoDialogOpen}
+              onClose={handleCloseVideoDialog}
+              maxWidth="lg" 
+              fullWidth 
+              aria-labelledby="video-dialog-title"
+            >
+              <IconButton
+                aria-label="close"
+                onClick={handleCloseVideoDialog}
+                sx={{
+                  position: 'absolute',
+                  right: 8,
+                  top: 8,
+                  color: (theme) => theme.palette.grey[500],
+                  zIndex: 1 
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+              <DialogContent sx={{ padding: 0, lineHeight: 0 }}> 
+                {currentVideoUrl && (
+                  <video
+                    width="100%" 
+                    height="auto"
+                    controls 
+                    autoPlay  
+                    key={currentVideoUrl}
+                  >
+                    <source src={currentVideoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+              </DialogContent>
+            </Dialog>
     </>
   )
 }

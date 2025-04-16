@@ -3,11 +3,11 @@ import { Box, Typography, Dialog, DialogContent, IconButton } from '@mui/materia
 import CloseIcon from '@mui/icons-material/Close'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 
-import ReportSvg from 'public/assets/svg/validacao-de-laudos.svg'
-import MentalHealthSvg from 'public/assets/svg/saude-mental-na-pratica.svg'
-import PEISvg from 'public/assets/svg/PEI-do-diagnostico-a-acao.svg'
-import TrainingSvg from 'public/assets/svg/capacitacao-que-transforma.svg'
-import CallSvg from 'public/assets/svg/abrir-chamado.svg'
+import ReportSvg from 'public/assets/svg/Validação de laudos-v2.svg'
+import MentalHealthSvg from 'public/assets/svg/Saúde Mental na prática-v2 (1).svg'
+import PEISvg from 'public/assets/svg/PEI- Do diagnóstico à ação-v2.svg'
+import TrainingSvg from 'public/assets/svg/Capacitação que transforma-v2.svg'
+import CallSvg from 'public/assets/svg/Abrir chamado-v2.svg'
 import { useBreakpoint } from '@/hooks/useBreakpoints'
 
 import { HomeHeader } from './components/HomeHeader/HomeHeader'
