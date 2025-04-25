@@ -7,6 +7,7 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  output: 'export',
   images: {
     remotePatterns: [
       { hostname: 'coalasaude.s3.amazonaws.com' },

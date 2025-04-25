@@ -75,14 +75,6 @@ export const AuthenticatedTemplateMobile: React.FC<ITemplate> = ({
       hasPermission: () => true,
     },
     {
-      name: 'Capacit. de equipe',
-      onClick: () => handleOpenVideoDialog('/assets/videoplayback.mp4'),
-      route: () => '',
-      isActive: () => false,
-      icon: NeurologyIcon,
-      hasPermission: () => true,
-    },
-    {
       name: 'Laudos e validação',
       onClick: () => handleOpenVideoDialog('/assets/videoplayback.mp4'),
       route: () => '',

@@ -15,13 +15,6 @@ import { HomeHeader } from './components/HomeHeader/HomeHeader'
 
 const featuresData = [
   {
-    id: 1,
-    title: ' Saúde Mental na prática',
-    description: 'Veja o depoimento real de uma escola parceira sobre como a Coala tem impactado positivamente a saúde mental no ambiente escolar, mostrando como o nosso atendimento psicológico remoto tem feito diferença no dia a dia de alunos e educadores.',
-    videoUrl: '/assets/videoplayback.mp4',
-    SvgComponent: MentalHealthSvg,
-  },
-  {
     id: 2,
     title: 'PEI: Do diagnóstico à ação',
     description: 'Apresentamos o preenchimento e a evolução do Plano Educacional Individualizado (PEI) dentro do nosso app, demonstrando como tornamos a personalização do cuidado simples, eficiente e acessível para toda a equipe pedagógica.',
@@ -41,13 +34,6 @@ const featuresData = [
     description: 'Veja como funciona o processo de validação de laudos com um especialista da nossa equipe através de uma tecnologia que garante precisão e respaldo clínico direto na escola, de forma online e rápida.',
     videoUrl: '/assets/videoplayback.mp4',
     SvgComponent: ReportSvg,
-  },
-    {
-    id: 5,
-    title: 'Capacitação que transforma',
-    description: 'Conheça nosso pacote completo de apoio às escolas, com capacitações, treinamentos e conteúdos sobre saúde e bem-estar. Do diagnóstico inicial ao combate ao bullying, preparamos as equipes para enfrentar todos os desafios do ambiente escolar.',
-    videoUrl: '/assets/videoplayback.mp4',
-    SvgComponent: TrainingSvg,
   },
 ]
 
